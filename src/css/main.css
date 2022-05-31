@@ -7,7 +7,6 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 
 body {
@@ -15,7 +14,11 @@ body {
     height: 100vh;
     background-color: #58B2F5;
 }
-
+.main{
+    width: 100%;
+    height: 100%;
+    padding-top: 2rem;
+}
 input {
     box-shadow: 0, 0, 0, 1;
     font-size: 2rem;
@@ -47,7 +50,7 @@ li {
     padding: 2rem;
     border-radius: 2rem;
     background-color: rgb(249, 250, 252);
-    margin: 2rem auto;
+    margin: 0 auto;
     overflow: hidden;
 }
 
@@ -97,6 +100,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
+    
 }
 
 .finished {
@@ -111,6 +115,7 @@ header {
     border-radius: 5rem;
     background: rgb(123, 122, 122);
     opacity: 0.5;
+    cursor: pointer;
 }
 
 li {
@@ -136,13 +141,14 @@ li {
     font-size: 2rem;
     border-radius: 5rem;
     background: #fff;
-
+    cursor: pointer;
 }
 .active{
     display: none;
 }
 .dialog {
     position: absolute;
+    width: 100%;
     inset: 0;
     background-color: rgba(16, 15, 15, 0.408);
 }
@@ -182,8 +188,36 @@ li {
 .check-task {
     width: 5rem;
     height: 2rem;
-
+    margin-bottom: 0;
+    cursor: pointer;
 }
+.detail{
+    position: absolute;
+    inset: 0;
+    background-color: #58B2F5;
+    z-index: 5;
+}
+.detail-task{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40rem;
+    height: 20rem;
+    background-color: antiquewhite;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.detail-task ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
 
 .footer {
     margin-top: 2rem;

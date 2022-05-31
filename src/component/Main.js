@@ -1,41 +1,33 @@
 import Header from './Header';
-import ListToDo from './ListToDo';
+import ToDo from './ToDo';
 import Footer from './Footer';
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import '../App.css';
-const Main = () => {
-    const [state, setState] = useState(null);
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem("task"));
-        if (data === null || data === []) {
-            setState(null);
-        }
-        else {
-            setState(data)
-        }
-    }, [])
+import { Context } from '../data/Contexts';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+export const Main = () => {
+    const { state } = useContext(Context);
+    
     return (
         <div className="main">
             <div className='wrapper'>
-                <Header setState={setState} />
+                <Header  />
                 {
-                    state === null ? <ListToDo text="No Item" /> : state.map((value, index) =>
-                        <ListToDo
-                            setState={setState}
-                            data={state}
+                    state === null ? <ToDo text="No Item" /> : state.map((value, index) =>
+                        <ToDo
                             key={index}
-                            text={value.text}
+                            text={value.name}
                             id={value.id}
-                            status={value.status}
                         />
                     )
                 }
-                <Footer
-                    setState={setState}
-                />
+                <Footer />
                 
             </div>
         </div>
+
+
     )
 }
-export default Main;

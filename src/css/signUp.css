@@ -1,0 +1,11 @@
+.signUp-page{
+    padding-top: 100px;
+}
+.signUp-form{
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 45px;
+    background-color: #fff;
+}

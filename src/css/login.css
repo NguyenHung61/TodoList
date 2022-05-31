@@ -1,0 +1,36 @@
+.login-page {
+    padding: 8% 0 0;
+}
+
+.form {
+    max-width: 360px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+}
+
+input {
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f2f2f2;
+}
+
+.btn-login {
+    padding: 15px;
+    background-color: #58B2F5;
+}
+
+.message-login {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}

@@ -1,16 +1,29 @@
 import predict from '../helper/predict';
 import '../css/main.css';
-const Dialog_Refresh = ({active, setActive , props}) => {
+import { useContext } from 'react';
+import { Context } from '../data/Contexts';
+const DialogRefresh = (props) => {
+    const {setState} = useContext(Context)
+    const { active, setActive} = props;
+
+    const btnYesClick = () => {
+        setState(predict());
+        setActive(false);
+    }
+    const exitDialog = () =>{
+        setActive(false);
+    }
+    
     return (
-        <div className= {active ? "dialog" : "dialog active"} onClick = {() => setActive(false)}>
+        <div className={active ? "dialog" : "dialog active"} onClick={exitDialog}>
             <div className="dialog-refresh">
                 <h1 className="message">Are you refresh?</h1>
                 <div className="confirm">
-                    <button className="btn btn-yes" onClick={() => {props.setState(predict());  setActive(false);}}>Yes</button>
-                    <button className="btn btn-no" onClick={() => setActive(false)}>No</button>
+                    <button className="btn btn-yes" onClick={btnYesClick}>Yes</button>
+                    <button className="btn btn-no" onClick={exitDialog}>No</button>
                 </div>
             </div>
         </div>
     )
 }
-export default Dialog_Refresh;
+export default DialogRefresh;
